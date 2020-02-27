@@ -34,7 +34,7 @@ var acalc = function(rcCommandf, rcRates, rcExpo, rates) {
 
     var expof = rcExpo;
     rcRates = rcRates * 200.0;
-    rates = rates * 1000.0;
+    rates = Math.max(rates, rcRates);
 
     var superExpoConfig = (((rates / rcRates) - 1) / (rates / rcRates))
     var curve = Math.pow(rcCommandf, 3) * expof + rcCommandf * (1 - expof)
